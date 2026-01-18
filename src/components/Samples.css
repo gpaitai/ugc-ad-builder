@@ -1,0 +1,169 @@
+.samples-section {
+    padding: 6rem 0;
+    background-color: var(--color-bg-page);
+}
+
+.section-header {
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--color-text-main);
+    letter-spacing: -0.01em;
+}
+
+.section-desc {
+    font-size: 1.125rem;
+    color: var(--color-text-sub);
+}
+
+.samples-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.sample-card {
+    background: var(--color-bg-card);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-border);
+}
+
+.sample-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.sample-thumbnail {
+    position: relative;
+    aspect-ratio: 9/15;
+    /* Vertical video ratio closer to phone */
+    background-color: #eee;
+    overflow: hidden;
+}
+
+.sample-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.sample-card:hover .sample-thumbnail img {
+    transform: scale(1.05);
+}
+
+.category-pill {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 4px 12px;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    color: white;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    /* Hidden by default or specific opacity requested? Prompt says "video thumbnail with play button" implies visible. */
+    /* Let's make it visible on hover or always visible but subtle. "Play button" sounds like it should be there. */
+    opacity: 1;
+    transition: background 0.3s;
+}
+
+.sample-card:hover .play-overlay {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.play-button {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text-main);
+    font-size: 1.25rem;
+    padding-left: 4px;
+    /* Optical center */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.sample-card:hover .play-button {
+    transform: scale(1.1);
+}
+
+.sample-content {
+    padding: 1.5rem;
+}
+
+.sample-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+}
+
+.sample-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text-main);
+    line-height: 1.3;
+}
+
+.ctr-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #10b981;
+    /* Green for success */
+    background: #ecfdf5;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.sample-subtitle {
+    font-size: 0.875rem;
+    color: var(--color-text-sub);
+    margin-bottom: 1rem;
+}
+
+.sample-metrics {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.875rem;
+    color: var(--color-text-sub);
+    border-top: 1px solid var(--color-border);
+    padding-top: 1rem;
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.metric-icon {
+    font-size: 1rem;
+}
