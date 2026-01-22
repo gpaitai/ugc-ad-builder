@@ -62,7 +62,7 @@ const Builder = () => {
             data.append('image', file);
 
             // Send to n8n webhook
-            const response = await fetch('https://n8n.geovault.org/webhook-test/UGC-Ad-Builder', {
+            const response = await fetch('https://n8n.geovault.org/webhook/UGC-Ad-Builder', {
                 method: 'POST',
                 body: data
             });
